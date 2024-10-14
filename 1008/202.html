@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>컴퓨터 기술 소개</title>
+    <link rel="stylesheet" href="4.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h2>운영체제에 대해</h2>
+
+        <hr><br>
+        <audio src="../sounds/Audio_104.mp3" controls></audio>
+        <h3>운영체제 <span>; Operating System</span></h3>
+        <p>운영체제는 컴퓨터 사용자와 컴퓨터 하드웨어 사이에 중계 역할을 하면서,
+            컴퓨터의 모든 자원과 프로그램 실행을 관리하고 제어하는 시스템 소프트웨어이다.
+        </p>    
+    </header>
+
+    <br><hr><br>
+
+    <nav>
+        <h3 style="margin-bottom: 2px;">목차</h3>
+        <small><span>아래 목차를 클릭하면 해당 위치로 이동합니다.</span></small>
+        <ol type = "I">
+            <li><a href="#history">운영체제의 역사</a></li><br>
+            <li><a href="#development">운영체제의 발전</a></li><br>  
+            <li><a href="#reference">참고 자료</a></li>
+        </ol>
+    </nav>
+
+    <br><hr><br>
+
+    <section>
+        <article>
+            <h3 id="history">운영체제의 역사</h3>
+            <p>  
+                <mark>고정 프로그램 컴퓨터</mark>란 1940년대 전선을 연결하는 방식으로
+                오직 한 개의 프로그램을 컴퓨터 하드웨어에 고착화시키는 초기 방식의 컴퓨터이다.
+                고정 프로그램 컴퓨터에는 하드웨어와 소프트웨어가 분리되어 있지 않았고 처리장치와 메모리의 분리 개념도 없었다.
+            </p>
+            <p>
+                <mark>내장 프로그램 컴퓨터</mark>는 1945년 <a href="https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%8F%B0_%EB%85%B8%EC%9D%B4%EB%A7%8C" target="_blank">폰 노이만</a>에 의해 제안된 컴퓨터 모델로 CPU, 메모리, 입력 장치, 출력 장치로 나누어지며,
+                프로그램은 메모리에 적재시키고 CPU는 메모리에 적재된 코드를 실행하는 방식이다.
+                내장 프로그램 컴퓨터의 등장은 하드웨어와 소프트웨어의 개념을 명확히 분리시켰다.
+            </p>
+            <p>
+                1955년 GM은 사용자 프로그램을 펀치카드로부터 메모리에 적재하는 <mark>GM OS라고 불리는 로더(loader)</mark>를 개발하였는데
+                사용자 프로그램을 메모리로 읽어 들여 실행시킨다는 점에서 최초의 원시 운영체제로 평가된다.
+            </p>
+            <p>
+                <mark>최초의 운영체제는 GM과 NAA가 합동하여 만든 GM-NAA I/O 소프트웨어이다.</mark>
+                GM-NAA I/O의 메인 프로그램은 메모리에 상주하면서 사용자의 작업을 한 번에 하나씩 메모리에 적재하여 실행시킨다.
+                그리고 카드 입력기, 테이프, 프린터 등 입출력 장치를 제어하는 공통 루틴을 라이브러리화하여 응용프로그램이 공유할 수 있게 하였다.
+            </p>
+        </article>
+
+        <br><hr><br>
+
+        <article>
+            <h3 id="development">운영체제의 발전</h3>
+            <p>
+                <mark>배치 운영체제</mark>는 사용자가 제출한 작업들을 정해진 시간에 한 번에 하나씩 메모리에 적재하여 실행시킨다.
+                <br><img src="../images/BatchProcessing.jpg" alt="이미지를 불러오지 못했습니다." width="400">
+            </p>
+            <p>
+                <mark>다중프로그래밍 운영체제</mark>는 여러 개의 작업을 메모리에 적재하고 한 작업이 입출력을 실행할 경우,
+                CPU에게 다른 작업을 실행시켜 입출력으로 인한 CPU의 유휴 시간을 줄이고, 동시에 여러 프로그램을 실행시킨다.
+                <br><img src="../images/Multiprogramming.jpg" alt="이미지를 불러오지 못했습니다." width="400">
+            </p>
+            <p>
+                <mark>시분할 다중프로그래밍 운영체제</mark>는 사용자가 컴퓨터와 원격으로 연결된 터미널로 프로그램의 실행을 제어하는 대화식 방법을 지원한다.
+                터미널에 연결된 각 사용자에게 시간 할당량만큼 CPU를 돌아가면서 할당한다.
+                <br><img src="../images/TimeSharing.jpg" alt="이미지를 불러오지 못했습니다." width="400"><br>
+                <em style="font-size: small; display: block; text-align: center;">** 오늘날 대부분의 운영체제가 시분할 운영체제의 기능을 가지고 있다. **</em>
+            </p>
+            <br>
+            <div style="border: 2px dotted seagreen;">
+                <table>
+                    <caption><b>&lt; 배치 운영체제, 다중프로그래밍 운영체제, 시분할 운영체제의 성능 비교 &gt;</b></caption>
+                    <thead>
+                        <tr><th></th> <th>배치 운영체제</th> <th>다중프로그래밍 운영체제</th> <th>시분할 운영체제</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>총 실행시간</td> <td>30</td> <td>17</td> <td>16</td></tr>
+                        <tr><td>CPU 우휴 시간</td> <td>14</td> <td>1</td> <td>0</td></tr>
+                        <tr><td>CPU 활용률</td> <td>16/30 = 0.53 = 53%</td> <td>16/17 = 0.176 = 94%</td> <td>16/16 = 100%</td></tr>
+                        <tr><td>처리율</td> <td>3/30 = 0.1작업/시간</td> <td>3/17 = 0.176작업/시간</td> <td>3/16 = 0.1875작업/시간</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+
+    <br>
+
+    <footer>
+        <div>
+            <h3 id="reference">참고 자료</h3>
+            <ul>
+                <li>'명품 운영체제' 황기태 지음, 생능 출판, Chapter 1 내용 정리.</li>
+                <li>HTML+CSS(기초) table 스타일 적용하기, by 차누감, https://lcw126.tistory.com/139</li>
+                <li>음성 파일 : 클로바더빙(CLOVA Dubbing)의 '아라' AI 보이스 사용.</li>
+            </ul>
+     
+            <a href="./survey4.html" target="_blank">설문조사 링크</a><br>
+            Copyright 2024 by be-HAFFY
+        </div>
+    </footer>
+
+</body>
+</html>
