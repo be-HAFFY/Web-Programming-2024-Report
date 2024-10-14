@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<!-- 
+이 페이지는 HTML5 를 처음 접하는 분들을 위한 예제 페이지입니다.
+기존에 HTML/CSS/Javascript 에 대한 기초적인 이해가 되어 있다는 가정 하에 작성되었습니다.
+페이지 내에 작성된 주석문들을 참고하셔서 자신만의 멋진 HTML5 페이지를 만들어보세요~!
+공부하시다가 궁금하신 점들은 아래의 경로로 문의해 주시면 됩니다.
+
+트위터: @grboard
+페이스북: facebook.com/heegeun.park
+이메일: sirini@gmail.com
+-->
+
+<head>
+<meta charset="utf-8" />
+
+<!-- 
+HTML5 에서 인코딩 선언부분은 위와 같이 단순해 졌습니다. 
+과거에는 <meta http-equiv="Content-Type" content="text/html; charset="utf-8"> 처럼
+길게 선언했었는데요, 이제는 charset 만 선언해 주시면 됩니다.
+
+참, HTML5 의 문서 선언부와 html 태그의 속성도 단순해졌습니다.
+제일 상단에 쓰여진 코드처럼 문서 형태 선언은 그냥 <!DOCTYPE html> 로 하시면 되며
+html 태그에는 lang 속성으로 언어 설정만 (필요시) 해주시면 됩니다.
+물론 기존 HTML 문서처럼 DOCTYPE 선언 코드는 반드시 문서 최상단에 명시되어야 합니다. (공백 불허)
+-->
+
+<style>
+/* 사용자 지정 폰트 정의 
+------------------- 
+CSS3 에서는 서버에 TTF 폰트를 업로드하고 이를 @font-face 지시문으로
+정의하여 마치 사용자 PC에 설치된 폰트처럼 사용 할 수 있는 웹폰트를 지원합니다.
+이전에 IE 에서 독자적으로 지원했던 웹폰트가 범용화 된 것으로 이해하셔도 됩니다.
+예전에 그림 문자들 및 타이포그라피용으로 쓴 그림들을 이제 웹폰트 기능으로 대체 할 수 있습니다.
+*/
+@font-face {
+	font-family: LOGO_FONT;
+	src: url("fonts/ALISON_.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: MENU_FONT;
+	src: url("fonts/Navi 산하체.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: HEAD_TITLE_FONT;
+	src: url("fonts/yoon수다핑크릴리.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: HEAD_SUB_FONT;
+	src: url("fonts/헤움봄비.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: NORMAL_FONT;
+	src: url("fonts/SM유노윤호.ttf") format("truetype");
+}
+
+/* 기본 HTML 요소들에 대한 속성 재정의 
+-------------------------------
+기본 HTML 요소들은 저마다 기본 속성값이 지정되어 있습니다. 브라우저마다 약간씩 다릅니다.
+이러한 기본 요소들의 스타일을 필요시 다시 정의할 수 있습니다. 주의할 점은, 기본 HTML 요소들의 스타일을
+재정의할 경우 기본 속성값이 덮어씌워질 수 있다는 점입니다.
+*/
+* {
+	font-family: NORMAL_FONT;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: #2e7f7f;
+}
+
+hgroup h1 {
+	font-family: HEAD_TITLE_FONT;
+	text-shadow: 1px 1px 1px #aaa;
+	font-size: 32px;
+	color: #4e8f8f;
+}
+
+hgroup h2 {
+	font-family: HEAD_SUB_FONT;
+	color: #5e7f7f;
+	text-shadow: 1px 1px 1px #eee;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+aside {
+	position: absolute;
+	width: 200px;
+	top: 0;
+	right: 0;
+}
+
+/* 특정 ID 를 가진 요소에 대한 속성 재정의
+---------------------------------
+문서 내에 하나만 존재하는 ID 를 부여받은 요소에 대해서 스타일을 부여할 때 아래처럼
+#아이디 를 이용하여 대상을 지정합니다. CSS 에서는 띄워쓰기로 자식 노드(들)를 지정 할 수 있습니다.
+#topMenus h1 의 경우, #topMenus 안에 h1 요소에 대한 스타일 정의를 가리킵니다.
+*/
+#wrapBox {
+	position: relative;
+	width: 800px;
+	margin: auto;
+	text-align: left;
+}
+
+#topMenus h1 {
+	font-family: LOGO_FONT;
+	font-size: 32px;
+	padding: 20px;
+	color: #2e4f4f;
+	text-shadow: 2px 2px 2px #ccc;
+}
+
+#topMenus ul {
+	position: absolute;
+	top: 8px;
+	right: 0;
+	text-align: right;
+	width: 500px;
+	height: 50px;
+	font-size: 16px;
+}
+
+#topMenus ul li {
+	display: inline;
+	padding-right: 15px;
+}
+
+#topMenus ul li a {
+	font-family: MENU_FONT;
+	font-size: 22px;
+	text-shadow: 2px 2px 1px #ddd;
+}
+
+#topMenus ul li a:hover {
+	border-bottom: #2eafaf 2px dotted;
+	padding-bottom: 3px;
+}
+
+#nowStep {
+	width: 100px;
+}
+
+#mainContent {
+	position: relative;
+}
+
+#myPhoto img {
+	box-shadow: rgba(0, 0, 100, 0.25) 2px 3px 3px;
+	-webkit-box-shadow: rgba(0, 0, 100, 0.25) 2px 3px 3px; /* 크롬/사파리 브라우저용 */
+	-moz-box-shadow: rgba(0, 0, 100, 0.25) 2px 3px 3px; /* 불여우 예전 버젼용 */
+}
+
+#copyleft {
+	background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#f2f2f2)); /* 크롬/사파리 브라우저용 */
+	padding: 10px;
+	text-align: center;
+	color: #999;
+}
+
+/* 필요한 요소에 바로 적용 시킬 수 있는 CLASS 모음 
+----------------------------------------
+CSS 에서는 공통적으로 자주 쓰이는 스타일들을 CLASS 로 묶어서 정의할 수 있습니다.
+어떠한 요소들도 한 개 이상의 클래스를 적용 할 수 있습니다.
+*/
+.shadowBox {
+	border: #ddd 1px solid;
+	border-radius: 10px;
+	-moz-border-radius: 10px; /* 불여우 예전 버젼용 */
+	box-shadow: rgba(0, 0, 128, 0.2) 0px 3px 3px;
+	-webkit-box-shadow: rgba(0, 0, 128, 0.2) 0px 3px 3px; /* 크롬/사파리 브라우저용 */
+	-moz-box-shadow: rgba(0, 0, 128, 0.2) 0px 3px 3px; /* 불여우 예전 버젼용 */
+}
+
+.fixWidth {
+	width: 560px;
+	padding: 0 10px 0 10px;
+	margin: 0 0 20px 0;
+}
+</style>
+
+<!-- 
+스타일시트는 외부에 .css 파일을 만들어두고 이를 링크하는 방식으로 포함시킬 수도 있습니다.
+실제로, 대부분은 아래와 같이 link 태그를 이용하여 외부 CSS 파일을 호출합니다.
+<link rel="stylesheet" href="mystyle.css" />
+이전과 달리 태그가 상당히 축약된 것을 확인 하실 수 있습니다.
+CSS 문법은 아래와 같은 구조를 가집니다.
+
+스타일먹일대상1 [, 스타일먹일대상2, ...] {
+	속성1: 값1;
+	속성2: 값2;
+	[...]
+}
+
+자세한 문법은 별도의 서적이나 혹은 아래의 URL 에서 더 많은 정보를 얻으실 수 있습니다.
+http://hooney.net/docs/css/documentsindex
+http://www.ibm.com/developerworks/kr/library/tutorial/wa-html5/index.html
+-->
+
+<script>
+// 페이지 로드 후 동작
+window.onload = function() {
+
+	// HTML5 에서 가장 강조되는 기술중 하나인 canvas 객체를 가져옵니다.
+	var context = document.getElementById("canvas").getContext("2d");
+
+	// 얼굴 (큰 원) 그리기
+	context.beginPath();
+	context.arc(150, 100, 70, 0, Math.PI * 2);
+	context.lineWidth = 10;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(200, 125, 10, 0.3)';
+	context.stroke();
+
+	// 왼쪽 눈 그리기
+	context.beginPath();
+	context.arc(120, 90, 10, -(Math.PI), 0);
+	context.lineWidth = 5;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(230, 130, 20, 0.5)';
+	context.stroke();
+
+	// 오른쪽 눈 그리기
+	context.beginPath();
+	context.arc(180, 90, 10, -(Math.PI), 0);
+	context.lineWidth = 5;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(230, 130, 20, 0.5)';
+	context.stroke();
+
+	// 입술 윗 선 그리기
+	context.beginPath();
+	context.moveTo(130, 120);
+	context.lineTo(170, 120);
+	context.lineWidth = 3;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(250, 145, 30, 0.5)';
+	context.stroke();
+
+	// 입술 아래 곡선 그리기
+	context.beginPath();
+	context.arc(150, 120, 20, 0, -(Math.PI));
+	context.lineWidth = 3;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(250, 145, 30, 0.5)';
+	context.stroke();
+
+	// 글자 그리기
+	context.font = "bold 24px MENU_FONT";
+	context.fillText("Welcome~! Happy day~!", 280, 100);
+	context.stroke();
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="wrapBox">
+
+	<!--
+	section 요소는 HTML5 에서 시맨틱한 태그 활용을 위해 추가된 구문입니다.
+	"절" 을 구분짓기 위해 사용되며, 아직 브라우저마다 스타일을 적용시키는 방식이 다소 차이가 있습니다.
+	시맨틱한 구분을 위해 활용하는 걸 추천하며, 스타일 등을 적용하기 위해서는 다시 div 태그 등으로
+	감싸서 ID 를 부여하고 핸들링 하시는 걸 추천합니다.
+	-->
+	<section id="topMenus">
+		<h1 class="shadowBox">BEHAFFY</h1>
+		
+		<!-- 
+		nav 요소는 내비게이션 요소를 시맨틱하게 표현하도록 하는 태그입니다.
+		페이지 별로 많이 있을 필요는 없고, 메뉴나 외부 사이트 링크 등 내비게이션 요소가 필요할 때
+		맞춰서 지시하시면 되겠습니다. nav 태그 역시 section 처럼 스타일을 적용하는데 브라우저마다
+		다소 상이한 부분이 있으므로 참고하시기 바랍니다.
+		-->
+		<nav>
+			<ul>
+				<li><a href="./">첫화면</a></li>
+				<li><a href="https://github.com/be-HAFFY">Github</a></li>
+				<li><a href="http://blog.naver.com/">블로그</a></li>
+				<li><a href="http://twitter.com/">트위터</a></li>
+				<li><a href="https://www.instagram.com/be._.haffy/">인스타그램</a></li>
+				<li><a href="mailto:haffiness427@gmail.com">이메일</a></li>
+			</ul>
+		</nav>
+	</section>
+
+	<!-- 
+	header 요소는 그 동안 흔히 <div id="header"> 처럼 사용하던 것을 좀 더 시맨틱하게 의미를 부여하고자
+	만들어낸 태그입니다. 문서의 상단부, 핵심적인 내용이나 표어, 혹은 콘텐츠가 있는 부분을 감싸는 태그로
+	이해하시면 됩니다. header 와 함께 footer 도 마찬가지 맥락으로 활용됩니다.
+	-->
+	<header>
+		<hgroup>
+			<h1>정지민 소개 페이지</h1>
+			<h2>만나서 반갑습니다! 이 페이지는 저를 소개하는 페이지입니다! 
+			이 페이지는 HTML5 기반으로 제작되었으며, 예제용으로 작성되었습니다.
+			아직까지 계속 작업중입니다. 현재 진행상태는 <progress id="nowStep" value="35" max="100">35%</progress> 입니다. 감사합니다!</h2>
+		</hgroup>
+	</header>
+	
+	<div id="mainContent">
+		<div id="basicInfo" class="shadowBox fixWidth">
+			<section>
+				<hgroup>
+					<h1>기본정보</h1>
+				</hgroup>
+				
+				<ul>
+					<li>경주 예일고등학교 졸업</li>
+					<li>경성대학교 소프트웨어학과 23학번</li>
+					<li></li>
+				</ul>
+			</section>
+		</div>
+		
+		<div id="techLog" class="shadowBox fixWidth">
+			<section>
+				<hgroup>
+					<h1>개발이력</h1>
+				</hgroup>
+				
+				<ul>
+					<li>없음.</li>
+					<li></li>
+					<li></li>
+				</ul>
+			</section>
+		</div>
+		
+		<div id="say" class="fixWidth">
+			<section>
+				<canvas id="canvas" width="550" height="200"></canvas>
+			</section>
+		</div>
+		
+		<!-- 
+		페이지 내부에 보조 메뉴들 배치나 기타 위젯 등을 배치하는 장소에 사용하면 어울리는 aside 태그입니다.
+		시맨틱한 마크업을 위해서 사용할 수 있습니다.
+		-->
+		<aside>
+			<figure id="myPhoto">
+				<img src="images/Haffy_github.png" alt="profile" width="200px">
+				<figcaption>프로필 일러스트</figcaption>
+			</figure>
+		</aside>
+	</div>
+	
+	<footer>
+		<div id="copyleft" class="shadowBox">
+			이 문서는 HTML5 예제용으로 작성한 문서이며, 크롬 브라우저에서 테스트 되었습니다. 수정 및 재배포 자유.
+		</div>
+	</footer>
+
+</div>
+
+</body>
+
+</html>
