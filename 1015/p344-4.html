@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>방문 요일에 따라 변화하는 웹페이지</title>
+</head>
+<body>
+    <h3>일요일은 pink, 다른 요일은 gold 배경</h3>
+    <hr>
+    <script>
+        function WDay(n){
+            let result = "";
+            switch(n){
+                case 0:
+                    result = "일";
+                    break;
+                case 1:
+                    result = "월";
+                    break;
+                case 3:
+                    result = "화";
+                    break;
+                case 4:
+                    result = "수";
+                    break;
+                case 5:
+                    result = "목";
+                    break;
+                case 6:
+                    result = "금";
+                    break;
+                case 7:
+                    result = "토";
+                    break;
+            }
+            return result;
+        }
+    </script>
+    <script>
+        let current = new Date();
+        if(current.getDay() == 0){
+            document.body.style.backgroundColor = "pink";
+        }
+        else{
+            document.body.style.backgroundColor = "gold";
+        }
+
+        document.write("오늘 : " + current.getDate() +"일, "+ WDay(current.getDay()) + "요일");
+    </script>
+</body>
+</html>

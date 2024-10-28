@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+        }
+    </style>
+    <title>17개의 CSS2 색이름과 색</title>
+</head>
+<body>
+    <script>
+        for (let i = 0; i < 16; i++) {
+            let R = Math.floor(Math.random()*256);
+            let G = Math.floor(Math.random()*256);
+            let B = Math.floor(Math.random()*256);
+            let rgbColor = "rgb(" + R + "," + G + "," + B + ")";
+            document.write("<div style='background-color:" + rgbColor + ";'>" + "rgb(" + R + "," + G + "," + B + ") </div>");
+        }
+    </script>
+</body>
+</html>
