@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>월화수목금토일</title>
+    <script>
+        function week(s){
+            switch(s){
+                case "월":
+                    document.write("월은 출근"); break;
+                case "화":
+                    document.write("화는 출근"); break;
+                case "수":
+                    document.write("수는 출근"); break;
+                case "목":
+                    document.write("목은 출근"); break;
+                case "금":
+                    document.write("금은 휴일"); break;
+                case "토":
+                    document.write("토는 휴일"); break;
+                case "일":
+                    document.write("일은 휴일"); break;
+                default:
+                    document.write("잘못입력하셨습니다.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>월화수목금토일</h3>
+    <hr>
+    <script>
+        let s = prompt("월화수목금토일 중에서 입력하세요","");
+        week(s);
+    </script>
+</body>
+</html>
