@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML</title>
+</head>
+<body>
+    <h3>innerHTML</h3>
+    <hr>
+    <p onclick="inputHTML(this)">
+        이번 여름에는 어디로 여행을 갈까요?
+    </p>
+    <script>
+        function inputHTML(Obj){
+            let text = prompt("HTML 텍스트 혹은 그냥 텍스트를 입력하세요.", "");
+            Obj.innerHTML = text;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>z-index 스타일 프로퍼티</title>
+    <style>
+        div { position : absolute; }
+        img { position: absolute; }
+    </style>
+</head>
+<body>
+    <h3>z-index 스타일 프로퍼티</h3>
+    <hr>
+    <div>
+        <img src="../card/AC.png" width="100" height="140" alt="스페이드A" onclick="goBack(this)">
+        <img src="../card/2S.png" width="100" height="140" alt="스페이드2" onclick="goBack(this)">
+        <img src="../card/3S.png" width="100" height="140" alt="스페이드3" onclick="goBack(this)">
+        <img src="../card/7S.png" width="100" height="140" alt="스페이드7" onclick="goBack(this)">
+    </div>
+    <script>
+        let cards = document.getElementsByTagName("img");
+        for(let i = 0; i < cards.length; i++){ //z-index 지정
+            cards[i].style.zIndex = i;
+            cards[i].style.top = "0px";
+            cards[i].style.left = "0px";
+        }
+        function goBack(obj){
+            obj.style.zIndex -= cards.length;
+        }
+    </script>
+</body>
+</html>
