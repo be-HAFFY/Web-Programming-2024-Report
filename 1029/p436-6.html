@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>onwheel</title>
+    <script>
+        function rescale(e, obj){
+            e.preventDefault();
+            let currentWidth = parseFloat(obj.style.width);
+            let currnetHeight = parseFloat(obj.style.height);
+            let scale = (e.wheelDelta < 0) ? 0.95 : 1.05;
+            obj.style.width = (currentWidth * scale) + "px";
+            obj.style.height = (currnetHeight * scale) + "px";
+        }
+    </script>
+</head>
+<body>
+    <h3>마우스 휠을 이용한 이미지 확대/축소</h3>
+    <hr>
+    <p>이미지 위에 휠을 위로 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.</p>
+    <img src="https://www.koya-culture.com/data/photos/20200728/art_15942832925604_fa18e5.jpg" alt="이미지 오류" style="width: 300px; height: auto;" onwheel="rescale(event, this)">
+</body>
+</html>
