@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>라디오 버튼과 이미지 출력</title>
+    <script>
+        let fruits = document.getElementsByName("fruits");
+        function drawImage(){
+            let value = null;
+            let img = document.getElementById("fruitimage");
+            for(let i = 0; i < fruits.length; i++){
+                if(fruits[i].checked == true){
+                    value = fruits[i].value;
+                }
+            }
+            switch(value){
+                case "banana":
+                    img.src = "../images/Banana.jpg";
+                    break;
+                case "mango":
+                    img.src = "../images/Mango.png";
+                    break;
+                case "apple":
+                    img.src = "../images/Apple.jpg";
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+    <hr>
+    <form onchange="drawImage()">
+        <label><input type="radio" name="fruits" value="banana" checked>바나나</label>
+        <label><input type="radio" name="fruits" value="mango">망고</label>
+        <label><input type="radio" name="fruits" value="apple">사과</label>
+    </form>
+    <img id="fruitimage" src="../images/Banana.jpg" alt="이미지 오류" width="200">
+</body>
+</html>

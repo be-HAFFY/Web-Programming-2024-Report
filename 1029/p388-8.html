@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>transform:rotate</title>
+    <script>
+        let i = 1;
+        function scale(Obj){
+            i += 1;
+            Obj.style.transform = "scale("+i+",1)";
+        }
+    </script>
+</head>
+<body>
+    <h3>클릭하면 2,3,4배로 옆으로 늘어납니다.</h3>
+    <hr>
+    <img src="/images/Profile.png" alt="이미지" onclick=scale(this)>
+</body>
+</html>
