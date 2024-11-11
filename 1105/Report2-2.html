@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>js로 자기소개 작성하기</title>
+</head>
+<body onload="writeDOM()">
+    <script>
+        function writeDOM(){
+            let newH3 = document.createElement("h3");
+            newH3.textContent = "간단한 자기소개 페이지 작성하기";
+            document.body.appendChild(newH3);
+            document.body.appendChild(document.createElement("hr"));
+            let newP = document.createElement("p");
+            newP.textContent = "안녕하세요! 경성대학교 소프트웨어학과에 재학중인 정지민입니다.";
+            document.body.appendChild(newP);
+            let newIMG = document.createElement("img");
+            newIMG.src = "../images/Profile.png";
+            newIMG.alt = "이미지 오류";
+            document.body.appendChild(newIMG);
+            document.body.appendChild(document.createElement("hr"));
+            let newP2 = document.createElement("p");
+            newP2.innerHTML = "&copy; 2024. be-HAFFY.";
+            document.body.appendChild(newP2);
+        }
+    </script>
+</body>
+</html>

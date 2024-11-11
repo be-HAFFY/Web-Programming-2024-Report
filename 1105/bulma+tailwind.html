@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자기소개 페이지</title>
+
+  <!-- Bulma CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-gray-100">
+
+  <!-- Bulma Navbar -->
+  <nav class="navbar is-dark">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">나의 소개</a>
+      <button class="navbar-burger burger" data-target="navbarMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">홈</a>
+        <a class="navbar-item" href="#">프로젝트</a>
+        <a class="navbar-item" href="#">연락처</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tailwind Main Section -->
+  <section class="container mx-auto py-16 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">안녕하세요!</h1>
+        <p class="text-lg text-gray-700 text-center mb-8">경성대학교 2024-2학기 웹프로그래밍 수업 과제 페이지입니다.</p>
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="button is-primary">GitHub</a>
+          <a href="#" class="button is-link">LinkedIn</a>
+        </div>
+      </div>
+      <div>
+        <img src="../images/Profile.png" alt="Profile Image" class="rounded-lg shadow-xl w-full">
+      </div>
+    </div>
+  </section>
+
+  <!-- Tailwind Footer -->
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024. be-HAFFY.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
