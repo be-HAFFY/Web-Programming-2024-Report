@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>계산기 만들기</title>
+    <style>
+        td>input{
+            width: 70px;
+            margin: 0px 10px;
+            text-align: center;
+        }
+        #display{
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <input type="text" id="display" value="0" disabled>
+    <br>
+    <table>
+        <tr>
+            <td><input type="button" value="BACK" onclick="BackSpace()"></td>
+            <td><input type="button" value="CE" onclick="Clear()"></td>
+            <td><input type="button" value="C" onclick="Clear()"></td>
+            <td><input type="button" value="=" onclick="Calculate()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="8" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="9" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="/" onclick="AppendValue(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="5" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="6" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="*" onclick="AppendValue(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="2" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="3" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="-" onclick="AppendValue(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="+" onclick="AppendValue(this.value)"></td>
+            <td><input type="button" value="NONE"></td>
+            <td><input type="button" value="NONE"></td>
+        </tr>
+    </table>
+
+    <script>
+        let display = document.getElementById("display");
+        let currentvalue = "0";
+
+        function BackSpace(){
+            currentvalue = currentvalue.slice(0, -1);
+            if(currentvalue == "") currentvalue = "0";
+            display.value = currentvalue;
+        }
+
+        function Clear(){
+            currentvalue = "0";
+            display.value = currentvalue;
+        }
+
+        function AppendValue(v){
+            if(currentvalue == "0"){
+                currentvalue = v.toString();
+            }
+            else{
+                currentvalue += v.toString();
+            }
+            display.value = currentvalue;
+        }
+
+        function Calculate(){
+            try {
+                currentvalue = eval(currentvalue).toString();
+                display.value = currentvalue;
+            } catch (error) {
+                display.value = "수식오류";
+                currentvalue = "0";
+            }
+        }
+    </script>
+</body>
+</html>

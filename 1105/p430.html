@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>마우스 클릭 연습</title>
+    <style>
+        td{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="setImage()">
+    <h3>마우스 클릭 연습</h3>
+    <hr>
+    <table border="1px">
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+            <td><img src="" alt=""></td>
+        </tr>
+    </table>
+    <script>
+        let i = -1;
+
+        function getRandom(){
+            return Math.floor(Math.random()*100);
+        }
+
+        function setImage(){
+            if(i>=0) removeImage(i);
+            i = getRandom();
+            let images = document.images[i];
+            images.src="../images/Profile.png";
+            images.width = 45;
+            images.height = 45;
+            images.addEventListener("click", setImage);
+        }
+
+        function removeImage(idx){
+            let images = document.images[idx];
+            images.removeAttribute("src");
+            images.removeAttribute("alt");
+            images.removeEventListener("click", setImage);
+        }
+    </script>
+</body>
+</html>

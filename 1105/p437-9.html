@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>onmouseover과 onmouseout</title>
+    <style>
+        #detail {
+            position: absolute;
+            visibility: hidden;
+            border: 1px solid skyblue;
+            background-color: lavender;
+            padding: 10px;
+            z-index: 1;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            let ItemList = document.getElementsByTagName("li");
+            for (let i = 0; i < ItemList.length; i++) {
+                ItemList[i].addEventListener("mouseover", function(event){ lookDetail(i, event); });
+                ItemList[i].addEventListener("mouseout", hideDetail);
+            }
+        };
+
+        function lookDetail(index, event){
+            let div = document.getElementById("detail");
+            let detailArr = [
+                "빨간 자전거를 타고 서울, 대전, 대구, 부산 찍고, 목포, 인천을 거쳐 달린다",
+                "다양한 주제의 책을 읽어 지식을 넓히기",
+                "스포츠 경기 도전하기",
+                "자바스크립트 공부하기"
+            ];
+            div.innerHTML = detailArr[index];
+            div.style.visibility = "visible";
+            let mouseX = event.clientX;
+            let mouseY = event.clientY;
+            div.style.left = mouseX + 10 + "px";
+            div.style.top = mouseY + 10 + "px";
+        }
+        function hideDetail(){
+            let div = document.getElementById("detail");
+            div.style.visibility = "hidden";
+        }
+    </script>
+</head>
+<body>
+    <h3>아이템에 마우스를 올리면 설명 출력</h3>
+    <hr>
+    <p>여름 방학 때 하고 싶은 것들</p>
+    <ul>
+        <li>자전거로 대한민국 일주</li>
+        <li>책 100권 읽기</li>
+        <li>철인 3종 경기 준비</li>
+        <li>자바스크립트 정복</li>
+    </ul>
+    <div id="detail"></div>
+</body>
+</html>
