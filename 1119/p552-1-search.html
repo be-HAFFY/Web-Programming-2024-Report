@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름과 학번 검색</title>
+</head>
+<body>
+    <h3>이름과 학번 검색</h3>
+    <hr>
+    <form>
+        검색할 이름 <input id="name" type="text"><br>
+        검색된 학번 <input id="number" type="text" disabled> <input type="button" value="스토리지에서 검색" onclick="search()">
+    </form>
+    <br>
+    <a href="./p552-1-store.html" target="_parent">[ 이름으로 학번 저장 ] 페이지로</a>
+
+     <script>
+        let name = document.getElementById("name");
+        let number = document.getElementById("number");
+
+        function search(){
+            if(!window.sessionStorage){
+                alert("세션 스토리지를 지원하지 않습니다.");
+                return;
+            }
+            let val = sessionStorage.getItem(name.value);
+            if(val==null){
+                alert("검색된 결과가 없습니다.");
+            }
+            else{
+                number.value = val;
+            }
+        }
+     </script>
+</body>
+</html>
