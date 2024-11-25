@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포스트잇</title>
+</head>
+<body>
+    <h3>포스트잇</h3>
+    <hr>
+    <form>
+        제목 <input id="title" type="text"><br>
+        메모입력<br><textarea id="memo" cols="25" rows="4"></textarea><br>
+        <input type="button" value="저장" onclick="store()"> <input type="button" value="보기" onclick="window.open('./p553-3-view.html', '_blank')">
+    </form>
+
+    <script>
+        let title = document.getElementById("title");
+        let memo = document.getElementById("memo");
+
+        function store(){
+            if(!window.localStorage){
+                alert("로컬 스토리지를 지원하지 않습니다.");
+                return;
+            }
+            localStorage.setItem(title.value, memo.value);
+        }
+    </script>
+</body>
+</html>

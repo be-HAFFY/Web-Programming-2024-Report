@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택한 도시와 음식 보여주기</title>
+    <style>
+        div{
+            border: 1px solid yellowgreen;
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>선택한 도시와 음식 보여주기</h3>
+    <hr>
+    <div id="view"></div>
+    <script>
+        window.addEventListener("storage", storageEventListener, false);
+        window.onload = show();
+
+        function storageEventListener(e){
+            show();
+        }
+
+        function show(){
+            let view = document.getElementById("view");
+            view.innerHTML = "";
+            for (let i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+                let val = localStorage.getItem(key);
+                if (i == localStorage.length - 1)
+                    view.innerHTML += (key + "=" + val);
+                else
+                    view.innerHTML += (key + "=" + val) + "<br>";
+            }   
+        }
+    </script>
+</body>
+</html>

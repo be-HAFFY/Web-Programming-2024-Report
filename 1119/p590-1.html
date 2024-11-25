@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 비디오 제어</title>
+</head>
+<body>
+    <h3>자바스크립트로 비디오 제어</h3>
+    <hr>
+    <video id="video" src="../vidieos/Hi.mp4" height="300"></video>
+    <div id="msg">이곳에 비디오 제어 메시지 출력</div>
+    <input type="button" value="play" onclick="control(event)">
+    <input type="button" value="pause" onclick="control(event)">
+    <input type="button" value="replay" onclick="control(event)">
+    <input type="button" value="vol-" onclick="control(event)">
+    <input type="button" value="vol+" onclick="control(event)">
+    <input type="button" value="mute on/off" onclick="control(event)">
+    <script>
+        let div = document.getElementById("msg");
+        let video = document.getElementById("video");
+        function control(e){
+            let val = e.target.value;
+            if(val == "play"){
+                video.play();
+                div.innerHTML = "재생중입니다.";
+            }
+            else if(val == "pause"){
+                video.pause();
+                div.innerHTML = "일시중지되었습니다.";
+            }
+            else if(val == "replay"){
+                video.load();
+                video.play();
+                div.innerHTML = video.src + "를 처음부터 재생합니다.";
+            }
+            else if(val == "vol-"){
+                video.volume -= 0.1;
+                if(video.volume < 0.1) video.volume = 0;
+                div.innerHTML = "음량 0.1 감소." + " [현재 : " + video.volume + "]";
+            }
+            else if(val == "vol+"){
+                video.volume += 0.1;
+                if(video.volume > 0.9) video.volume = 1.0;
+                div.innerHTML = "음량 0.1 증가." + " [현재 : " + video.volume + "]";
+            }
+            else if(val == "mute on/off"){
+                video.muted = !video.muted;
+                if(video.muted) div.innerHTML = "음소거";
+                else div.innerHTML = "음소거 해제";
+            }
+        }
+    </script>
+</body>
+</html>

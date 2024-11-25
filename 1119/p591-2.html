@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오디오 재생</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .Name {
+            width: 200px;
+            border-bottom: 1px solid grey;
+        }
+        .Number {
+            text-align: center;
+            width: 13px;
+            border: 1px solid green;
+        }
+        .playing {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h3>오디오 재생</h3>
+    <hr>
+    <audio id="audio" controls>
+        웹 브라우저가 audio 태그를 지원하지 않습니다.
+    </audio>
+    <table id="songList">
+        <tr>
+            <td class="Number">1</td>
+            <td class="Name" id="song1"><b>애국가</b></td>
+            <td><input type="button" value="재생" onclick="playSong('../sounds/애국가 1절.mp3', 'song1')"></td>
+            <td><input type="button" value="중지" onclick="stopSong()"></td>
+        </tr>
+        <tr>
+            <td class="Number">2</td>
+            <td class="Name" id="song2"><b>Moon Glow</b></td>
+            <td><input type="button" value="재생" onclick="playSong('../sounds/moonglow.mp3', 'song2')"></td>
+            <td><input type="button" value="중지" onclick="stopSong()"></td>
+        </tr>
+        <tr>
+            <td class="Number">3</td>
+            <td class="Name" id="song3"><b>Embraceable You</b></td>
+            <td><input type="button" value="재생" onclick="playSong('../sounds/embraceableyou.mp3', 'song3')"></td>
+            <td><input type="button" value="중지" onclick="stopSong()"></td>
+        </tr>
+    </table>
+
+    <script>
+        let audio = document.getElementById('audio');
+        let currentPlaying = null;
+
+        function playSong(file, songId) {
+            audio.src = file;
+            audio.play();
+
+            if (currentPlaying) {
+                document.getElementById(currentPlaying).classList.remove('playing');
+            }
+            currentPlaying = songId;
+            document.getElementById(songId).classList.add('playing');
+        }
+
+        function stopSong() {
+            audio.pause();
+            audio.currentTime = 0;
+
+            if (currentPlaying) {
+                document.getElementById(currentPlaying).classList.remove('playing');
+                currentPlaying = null;
+            }
+        }
+    </script>
+</body>
+</html>

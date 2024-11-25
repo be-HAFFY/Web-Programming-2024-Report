@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다시할까요?</title>
+</head>
+<body>
+    <h3>애국가 연주</h3>
+    <hr>
+    <audio id="audio" src="../sounds/애국가 1절.mp3" controls>웹 브라우저가 audio 태그를 지원하지 않습니다.</audio>
+    <script>
+        let audio = document.getElementById("audio");
+        audio.onended = function(){
+            let answer = confirm("다시할까요?");
+            if(answer){
+                audio.currentTime = 0;
+                audio.play();
+            }
+        };
+    </script>
+</body>
+</html>

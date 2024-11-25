@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 단어장 모두 출력</title>
+    <style>
+        table {
+            background-color: aliceblue;
+        }
+        span {
+            border: 1px solid yellowgreen;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        td, th {
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>나의 단어장 모두 출력</h3>
+    <hr>
+    <table id="tb">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        if (window.localStorage) {
+        document.write("<table>");
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            let val = localStorage.getItem(key);
+            document.write("<tr>");
+            document.write("<td><span>" + (i + 1) + "</span></td>");
+            document.write("<th>" + key + "</th>");
+            document.write("<td>" + val + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    } else {
+        alert("로컬 스토리지를 지원하지 않습니다.");
+    }
+    </script>
+</body>
+</html>

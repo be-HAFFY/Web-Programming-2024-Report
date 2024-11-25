@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워커 태스크 만들기</title>
+    <script>
+    let worker=null;
+
+    function startWorkTask() {
+	    worker = new Worker("p592-5.js");
+    }
+
+    function calculate() {
+        let score = prompt("점수를 숫자로 입력하세요", "");
+
+        if (isNaN(score) || parseInt(score) > 100 || parseInt(score) < 0) {
+            alert("잘못된 입력입니다. 0부터 100 사이의 숫자를 입력해주세요.");		
+            return;
+        }
+            
+        worker.postMessage(score);
+        
+        worker.onmessage = function (e) {
+            let msgArea = document.getElementById("msg");
+            msgArea.innerHTML = score + "=" + e.data + "<br>";
+        }
+    }
+    </script>
+</head>
+<body onload="startWorkTask()">
+    <h3>학점 매기기</h3>
+    <hr>
+    <button onclick="calculate()">점수 입력</button>
+    <div id="msg"></div>
+</body>
+</html>
