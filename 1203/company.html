@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>라이엇 게임즈 소개</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Materialize CSS -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    @font-face {
+        font-family: 'Paperlogy-8ExtraBold';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+        font-weight: 600;
+        font-style: normal;
+    }
+    body {
+      font-family: 'Paperlogy-8ExtraBold', 'Noto Sans KR', sans-serif;
+      background-color: #121212;
+      color: white;
+      letter-spacing: 0.05em;
+    }
+    .navbar {
+      background-color: #1a1a1a;
+    }
+    .navbar a {
+      color: white !important;
+    }
+    .hero-section {
+      background: url('https://displays.riotgames.com/static/content-original-runeterra-ionia-3af5494dd645cb673dc4cedc2d3458b1.jpg')
+        no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .hero-section img {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 60px;
+    }
+    .hero-text {
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 2rem;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    .games-section img {
+      width: 100%;
+      max-width: 150px;
+      margin: 20px;
+    }
+    .esports-section,
+    .entertainment-section {
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
+    }
+    .esports-section {
+      background-image: url('https://www.riotgames.com/darkroom/1440/a4e88f6b04bf83f1c417e87292b85606:b62ff9b783f3dd26a6321e1440efe13b/riot-games-the-team-behind-worlds-2022-esports-broadcast-league-of-legends.png');
+    }
+    .entertainment-section {
+      background-image: url('https://www.riotgames.com/darkroom/1440/b540da2b9afe5ec83e842a2d84f6dbb1:e95535ecd35e48592908762c9353926a/arcane-final-poster-16x9-no-text-no-border.jpg');
+    }
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Riot Games</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">회사 소개</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#games">게임</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#esports">e스포츠</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#entertainment">엔터테인먼트</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">문의</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <img src="https://wiki1.kr/images/thumb/b/b0/%EB%9D%BC%EC%9D%B4%EC%97%87%EA%B2%8C%EC%9E%84%EC%A6%88_%EB%A1%9C%EA%B3%A0.png/200px-%EB%9D%BC%EC%9D%B4%EC%97%87%EA%B2%8C%EC%9E%84%EC%A6%88_%EB%A1%9C%EA%B3%A0.png" alt="라이엇 게임즈 로고">
+    <div class="hero-text">
+      <h1>RIOT GAMES</h1>
+      <p>세계적인 게임 개발 및 e스포츠 선두주자</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2 class="section-title">회사 소개</h2>
+    <p class="text-center">
+      라이엇 게임즈는 2006년에 설립된 게임 개발사로, 리그 오브 레전드, 발로란트 등의
+      히트작을 통해 전 세계 게이머들의 사랑을 받고 있습니다.
+    </p>
+  </section>
+
+  <!-- Games Section -->
+  <section id="games" class="container games-section">
+    <div class="text-center">
+      <img src="https://brand.riotgames.com/static/a91000434ed683358004b85c95d43ce0/8a20a/lol-logo.png" alt="리그 오브 레전드">
+      <img src="https://seeklogo.com/images/V/valorant-logo-79F3C14844-seeklogo.com.png" alt="발로란트">
+    </div>
+  </section>
+
+  <!-- eSports Section -->
+  <section id="esports" class="esports-section">
+    <div>
+      <h2>e스포츠</h2>
+      <p>라이엇 게임즈는 전 세계적인 e스포츠 이벤트를 통해 팬들과의 연결을 강화합니다.</p>
+    </div>
+  </section>
+
+  <!-- Entertainment Section -->
+  <section id="entertainment" class="entertainment-section">
+    <div>
+      <h2>엔터테인먼트</h2>
+      <p>애니메이션 시리즈 <b>아케인</b>과 같은 엔터테인먼트 콘텐츠로 다양한 재미를 선사합니다.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Riot Games. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
